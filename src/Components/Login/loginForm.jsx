@@ -5,7 +5,6 @@ import { useState } from 'react';
 import creditCard from '../../Assets/credit-cards-payment.png'; // Adjust the path to your image
 import passwordIcon from '../../Assets/padlock.png'; // Adjust the path to your image
 import React from 'react';
-import {Link} from 'react-router-dom';
 import './login.css'; // Assuming you have some styles for the form
 
 export default function LoginForm() {
@@ -32,7 +31,7 @@ export default function LoginForm() {
         inputMode="numeric"
         value={accountNumber} 
         onChange={(e) => setAccountNumber(e.target.value)} 
-        placeholder="Account Number / debit card number" 
+        placeholder="Account Number" 
         minLength={16}
         maxLength={16}
         required />

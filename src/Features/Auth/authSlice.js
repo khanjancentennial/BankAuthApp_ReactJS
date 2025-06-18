@@ -25,7 +25,22 @@ const authSlice = createSlice({
     logout: (state) => {
       state.user = null;
       localStorage.removeItem('user');
+      // state.isLoading = false;
+      // state.isError = false;
+      // state.message = '';
     },
+
+    // logout: (state) => {
+    //   state.user = null;
+    //   localStorage.removeItem('authToken');
+    //   localStorage.removeItem('currentUser');
+    //   state.loading = false;
+    //   state.error = null;
+    // },
+    // You might have an action to set user from localStorage on app load
+    setUserFromStorage: (state, action) => {
+      state.user = action.payload;
+    }
   },
   extraReducers: (builder) => {
     builder

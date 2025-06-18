@@ -74,7 +74,7 @@ export default function RegistrationForm() {
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
       <text className='text'>
-      Already have an account? <Link to="/">Login</Link>
+      Already have an account? <Link to="/login">Login</Link>
     </text>
     </form>
     
