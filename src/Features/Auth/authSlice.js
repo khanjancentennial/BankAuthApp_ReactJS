@@ -5,7 +5,10 @@ import { loginAPI, registerAPI } from './authApi';
 const userFromStorage = JSON.parse(localStorage.getItem('user')) || null;
 
 export const login = createAsyncThunk('auth/login', async (credentials) => {
+  console.log('Login credentials:', credentials);
   const user = await loginAPI(credentials);
+  localStorage.setItem('authToken', user.token);
+  localStorage.setItem('currentUser', JSON.stringify(user));
   return user;
 });
 

@@ -1,9 +1,12 @@
 // src/features/auth/authAPI.js
 
-export async function loginAPI({ email, password }) {
+export async function loginAPI({ accountNumber, password }) {
+  console.log('Login API called with:', accountNumber)
+  accountNumber = accountNumber.toString() // Ensure accountnumber is a number
+  console.log('Login API called with:', typeof accountNumber, accountNumber, typeof password, password);
   // Replace with actual API call using fetch or axios
-  if (email === 'test@example.com' && password === '123456') {
-    return { name: 'Test User', email, token: 'fake-jwt-token' };
+  if (accountNumber === '1234567890123456' && password === '123456') {
+    return { name: 'Test User', accountNumber, token: 'fake-jwt-token' };
   }
   throw new Error('Invalid credentials');
 }
